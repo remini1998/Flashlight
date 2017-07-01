@@ -1,0 +1,9 @@
+{
+    "name": "arxiv-resolver", 
+    "displayName": "Arxiv resolver",
+    "description": "It resolves arxiv article ids or searches by keywords on arxiv.",
+    "examples": ["arXiv:cond-mat/0612341", "arXiv dysprosium"], 
+    "categories": ["Utilities"],
+    "creator_name": "Fan Yang",
+    "creator_url": ""
+}

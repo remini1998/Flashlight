@@ -1,0 +1,9 @@
+{
+    "name": "doi-resolver", 
+    "displayName": "DOI resolver",
+    "description": "It resolves doi.",
+    "examples": ["doi:10.1016/S0003-4916(02)00018-0", "doi 10.1103/PhysRev.106.162"], 
+    "categories": ["Utilities"],
+    "creator_name": "Fan Yang",
+    "creator_url": ""
+}
