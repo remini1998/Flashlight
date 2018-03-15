@@ -9,17 +9,18 @@
 @import AppKit;
 #import "ZKSwizzle.h"
 #import "_Flashlight_Bootstrap.h"
-#import "SPKQuery.h"
 #import "NSObject+LogProperties.h"
 //#import "SPParsecSimpleResult.h"
 #import "_FlashlightPluginEngine.h"
 
 
+@protocol FLQuery
+- (NSString *)userQueryString;
+@end
+
 BOOL _Flashlight_Is_10_10_2_Spotlight() {
     return NSClassFromString(@"SPQuery") == nil;
 }
-
-@class SPQuery;
 
 //OPInitialize {
 //    @autoreleasepool {
@@ -49,29 +50,34 @@ ZKSwizzleInterface(_SPSearchPanel, SPSearchPanel, NSPanel)
 ZKSwizzleInterface(_SPAppDelegate, SPAppDelegate, NSObject)
 @implementation _SPAppDelegate
 
-- (void)setQuery:(SPKQuery *)query {
-    [[_FlashlightPluginEngine shared] setQuery:query.userQueryString];
+- (void)setQuery:(id<FLQuery>)query {
+    [[_FlashlightPluginEngine shared] setQuery:[query userQueryString]];
     ZKOrig(void, query);
 }
 
 @end
 
-ZKSwizzleInterface(_SPResultViewController, SPResultViewController, NSObject)
-@implementation _SPResultViewController
-
-/*- (void)setResults:(NSArray *)results {
-    ZKOrig(void, [[_FlashlightPluginEngine shared] mergeFlashlightResultsWithSpotlightResults:results]);
-}*/
-
+hook(SPResultViewController, HighSierra)
 - (NSArray *) results {
     return [[_FlashlightPluginEngine shared] mergeFlashlightResultsWithSpotlightResults:ZKOrig(NSArray *)];
 }
+endhook
 
-@end
+hook(SPResultViewController, Sierra)
+- (void)setResults:(NSArray *)results {
+    ZKOrig(void, [[_FlashlightPluginEngine shared] mergeFlashlightResultsWithSpotlightResults:results]);
+}
+endhook
+
+ctor {
+    (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_12) ? ZKSwizzleGroup(Sierra) : ZKSwizzleGroup(HighSierra);
+}
+
 
 @implementation _Flashlight_Bootstrap
 
 + (void)load {
+    NSLog(@"Hello from Flashlight! (%@)", [[NSBundle bundleWithIdentifier:@"com.nateparrott.SpotlightSIMBL"] bundlePath]);
     
     /*RSSwizzleClassMethod(NSClassFromString(@"SPDictionaryQuery"), @selector(alloc), RSSWReturnType(id), RSSWArguments(), {
         RSSWCallOriginal();

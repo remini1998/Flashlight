@@ -80,8 +80,11 @@
     id appDelegate = [[NSApplication sharedApplication] delegate];
     SPResultViewController *resultVC = [appDelegate currentViewController];
     [resultVC setResults:resultVC.results];
-    // [resultVC reloadResultsSelectingTopResult:YES animate:NO];
-    [[appDelegate mainViewController] reloadResultsSelectingTopResult:YES animate:NO];
+    if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_12) {
+        [resultVC reloadResultsSelectingTopResult:YES animate:NO];
+    } else {
+        [[appDelegate mainViewController] reloadResultsSelectingTopResult:YES animate:NO];
+    }
     [self updateWindowCollapsed];
 }
 
