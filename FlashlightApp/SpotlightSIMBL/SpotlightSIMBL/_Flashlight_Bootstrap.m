@@ -9,10 +9,11 @@
 @import AppKit;
 #import "ZKSwizzle.h"
 #import "_Flashlight_Bootstrap.h"
-#import "SPSpotQuery.h"
+#import "SPKQuery.h"
 #import "NSObject+LogProperties.h"
-#import "SPParsecSimpleResult.h"
+//#import "SPParsecSimpleResult.h"
 #import "_FlashlightPluginEngine.h"
+
 
 BOOL _Flashlight_Is_10_10_2_Spotlight() {
     return NSClassFromString(@"SPQuery") == nil;
@@ -48,7 +49,7 @@ ZKSwizzleInterface(_SPSearchPanel, SPSearchPanel, NSPanel)
 ZKSwizzleInterface(_SPAppDelegate, SPAppDelegate, NSObject)
 @implementation _SPAppDelegate
 
-- (void)setQuery:(SPSpotQuery *)query {
+- (void)setQuery:(SPKQuery *)query {
     [[_FlashlightPluginEngine shared] setQuery:query.userQueryString];
     ZKOrig(void, query);
 }
@@ -71,7 +72,6 @@ ZKSwizzleInterface(_SPResultViewController, SPResultViewController, NSObject)
 @implementation _Flashlight_Bootstrap
 
 + (void)load {
-    NSLog(@"Hello from Flashlight! (%@)", [[NSBundle bundleWithIdentifier:@"com.nateparrott.SpotlightSIMBL"] bundlePath]);
     
     /*RSSwizzleClassMethod(NSClassFromString(@"SPDictionaryQuery"), @selector(alloc), RSSWReturnType(id), RSSWArguments(), {
         RSSWCallOriginal();
