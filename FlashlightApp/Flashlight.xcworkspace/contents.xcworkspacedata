@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SpotlightSIMBL/SpotlightSIMBL.xcodeproj">
+      location = "group:Flashlight.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Flashlight.xcodeproj">
+      location = "group:SpotlightSIMBL/SpotlightSIMBL.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:FlashlightKit/FlashlightKit.xcodeproj">

@@ -197,7 +197,13 @@
     NSString *dstBndl = @"/Library/Application Support/SIMBL/Plugins/SpotlightSIMBL.bundle/Contents/Info.plist";
     if ([[NSFileManager defaultManager] fileExistsAtPath:dstBndl]){
         NSString *srcVer = [[[NSMutableDictionary alloc] initWithContentsOfFile:srcBndl] objectForKey:@"CFBundleVersion"];
+#ifdef DEBUG
+        // Mock bundle version of currently loaded SpotlightSIMBL.bundle
+        // so it will get overwritten every time in DEBUG mode.
+        NSString *dstVer = @"-1";
+#else
         NSString *dstVer = [[[NSMutableDictionary alloc] initWithContentsOfFile:dstBndl] objectForKey:@"CFBundleVersion"];
+#endif
         if (![srcVer isEqual:dstVer] && ![srcPath isEqualToString:@""])
         {
             NSLog(@"\nSource: %@\nDestination: %@", srcVer, dstVer);
