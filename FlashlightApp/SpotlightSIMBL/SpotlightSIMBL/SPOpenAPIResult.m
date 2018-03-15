@@ -8,7 +8,7 @@
 
 #import "ZKSwizzle.h"
 #import "SPOpenAPIResult.h"
-#import "SPQuery.h"
+#import "SPKQuery.h"
 #import "SPResult.h"
 #import "SPResponse.h"
 #import "SPDictionaryResult.h"
@@ -18,6 +18,7 @@
 #import <FlashlightKit/FlashlightKit.h>
 #import <FlashlightKit/FlashlightIconResolution.h>
 #import <objc/runtime.h>
+
 
 /*
  a wrapper around objc zeroing weak references, since we can't store zeroing weak references as associated objects.

@@ -10,7 +10,7 @@
 #import "NSWindowDelegate.h"
 #import "SPResultViewControllerDelegate.h"*/
 
-@class NSArray, NSDictionary, NSImageView, NSMutableArray, NSString, NSTimer, NSView, NSXPCConnection, NSXPCListener, SPListenerDelegate, SPQuery, SPResponse, SPResult, SPResultViewController, SPSearchField, SPSearchFieldEditor, SPSearchPanel, SPStatistics, SPStatusItemView;
+@class NSArray, NSDictionary, NSImageView, NSMutableArray, NSString, NSTimer, NSView, NSXPCConnection, NSXPCListener, SPListenerDelegate, SPQuery, SPResponse, SPResult, SPResultViewController, SPSearchField, SPSearchFieldEditor, SPSearchPanel, SPStatistics, SPStatusItemView, SPMainViewController;
 
 @interface SPAppDelegate : NSObject <SPResultViewControllerDelegate, NSApplicationDelegate, NSWindowDelegate>
 {
@@ -46,7 +46,7 @@
     NSImageView *_topHitImageView;
     NSImageView *_magnifierView;
     SPResult *_topHitResult;
-    // NSViewController<SPMainViewController> *_mainViewController;
+    SPMainViewController *_mainViewController;
     NSXPCListener *_listener;
     SPListenerDelegate *_listenerDelegate;
     NSXPCConnection *_listenerConnection;
@@ -75,7 +75,7 @@
 @property(retain) NSXPCConnection *listenerConnection; // @synthesize listenerConnection=_listenerConnection;
 @property(retain) SPListenerDelegate *listenerDelegate; // @synthesize listenerDelegate=_listenerDelegate;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
-@property(retain) NSViewController *mainViewController; // @synthesize mainViewController=_mainViewController;
+@property(retain) SPMainViewController *mainViewController; // @synthesize mainViewController=_mainViewController;
 @property(retain) SPResult *topHitResult; // @synthesize topHitResult=_topHitResult;
 @property __weak NSImageView *magnifierView; // @synthesize magnifierView=_magnifierView;
 @property __weak NSImageView *topHitImageView; // @synthesize topHitImageView=_topHitImageView;

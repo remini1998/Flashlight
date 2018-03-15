@@ -58,8 +58,12 @@ ZKSwizzleInterface(_SPAppDelegate, SPAppDelegate, NSObject)
 ZKSwizzleInterface(_SPResultViewController, SPResultViewController, NSObject)
 @implementation _SPResultViewController
 
-- (void)setResults:(NSArray *)results {
+/*- (void)setResults:(NSArray *)results {
     ZKOrig(void, [[_FlashlightPluginEngine shared] mergeFlashlightResultsWithSpotlightResults:results]);
+}*/
+
+- (NSArray *) results {
+    return [[_FlashlightPluginEngine shared] mergeFlashlightResultsWithSpotlightResults:ZKOrig(NSArray *)];
 }
 
 @end
