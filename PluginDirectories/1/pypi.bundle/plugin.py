@@ -40,7 +40,3 @@ def results(parsed, original_query):
         "html": html,
         "webview_links_open_in_browser": True
     }
-
-def run(url):
-    import os
-    os.system('open "{0}"'.format(url))
