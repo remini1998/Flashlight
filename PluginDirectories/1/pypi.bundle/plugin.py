@@ -19,7 +19,7 @@ def results(parsed, original_query):
 
     # Set server URL
     if server == 'warehouse':
-        url_template = 'https://warehouse.python.org/search/?q={0}'
+        url_template = 'https://pypi.org/search/?q={0}'
     elif server == 'devpi':
         url_template = 'http://localhost:3141/+search?query={0}'
     else:
