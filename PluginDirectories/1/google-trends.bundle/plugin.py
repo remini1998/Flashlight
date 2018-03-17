@@ -3,7 +3,7 @@ def results(fields, original_query):
     for key in ["~keyword"]:
         if key in fields:
             keyword = fields[key].encode('utf8')
-            url = "https://www.google.co.jp/trends/explore#q={0}&cmpt=q&tz=".format(urllib.quote(keyword))
+            url = "https://www.google.com/trends/explore#q={0}&cmpt=q&tz=".format(urllib.quote(keyword))
             html = """
 <script>
     setTimeout(function() {
