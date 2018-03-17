@@ -1,4 +1,4 @@
-Flashlight (for macOS 10.10 and above) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nate-parrott/Flashlight?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Flashlight (for macOS 10.10+) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nate-parrott/Flashlight?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ==========
 
 Flashlight is an **unofficial Spotlight API** that allows you to programmatically process queries and add additional results.
@@ -37,9 +37,8 @@ Credits
 
 - [nate-parrott](https://github.com/nate-parrott) - [Original Flashlight](https://github.com/nate-parrott/Flashlight)
 - [alexzielenski](https://github.com/alexzielenski) - [macOS 10.10+ Opee support](https://github.com/alexzielenski/Flashlight)
-- [w0lfschild](https://github.com/w0lfschild)    
-    - [macOS 10.10+ support](https://github.com/w0lfschild/Flashlight)    
-    - [macOS 10.12+ fixes](https://github.com/w0lfschild/Flashlight)
+- [w0lfschild](https://github.com/w0lfschild) - [macOS 10.10 - 10.12 support](https://github.com/w0lfschild/Flashlight)    
+- [krystofcelba](https://github.com/krystofcelba) - [macOS 10.13 support](https://github.com/w0lfschild/Flashlight)
 
 
 Translations
