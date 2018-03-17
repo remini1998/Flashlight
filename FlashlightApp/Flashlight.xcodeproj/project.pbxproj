@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30AF32A25F89BB482266017E /* libPods-Flashlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F301218945FC13823731C49D /* libPods-Flashlight.a */; };
+		5CD4D1FE205A3DCF00E7CA41 /* SpotlightSIMBL.bundle in Copy Bundle */ = {isa = PBXBuildFile; fileRef = 5CD4D1F4205A37F100E7CA41 /* SpotlightSIMBL.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F2B37751A3E42E500AC2C19 /* SearchPluginEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B37731A3E42E500AC2C19 /* SearchPluginEditorWindowController.m */; };
 		5F2B37761A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F2B37741A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib */; };
 		5F3878131AC2527C0003363D /* PluginInstallManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3878121AC2527C0003363D /* PluginInstallManager.m */; };
@@ -85,8 +86,24 @@
 		6C56449B159E7C0900215467 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C564499159E7C0900215467 /* MainMenu.xib */; };
 		6C5644B8159E7D3900215467 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5644B7159E7D3900215467 /* ServiceManagement.framework */; };
 		FB24C0271E5B0A39009C523B /* alarm.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = FB24C0261E5B0A39009C523B /* alarm.bundle */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FB8B898E1D0E57A300E68B38 /* SpotlightSIMBL.bundle in Copy Bundle */ = {isa = PBXBuildFile; fileRef = FB8B898D1D0E57A300E68B38 /* SpotlightSIMBL.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5CD4D1F3205A37F100E7CA41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CD4D1EF205A37F100E7CA41 /* SpotlightSIMBL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F5B17411A05757500809207;
+			remoteInfo = SpotlightSIMBL;
+		};
+		5CD4D1FB205A389300E7CA41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CD4D1EF205A37F100E7CA41 /* SpotlightSIMBL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F5B17401A05757400809207;
+			remoteInfo = SpotlightSIMBL;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5F8CCEA81AD3A555009D200E /* Copy Starter Pack */ = {
@@ -126,7 +143,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				FB8B898E1D0E57A300E68B38 /* SpotlightSIMBL.bundle in Copy Bundle */,
+				5CD4D1FE205A3DCF00E7CA41 /* SpotlightSIMBL.bundle in Copy Bundle */,
 			);
 			name = "Copy Bundle";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +152,7 @@
 
 /* Begin PBXFileReference section */
 		1A17445B392804CE3CB1AE6B /* Pods-Flashlight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashlight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flashlight/Pods-Flashlight.debug.xcconfig"; sourceTree = "<group>"; };
+		5CD4D1EF205A37F100E7CA41 /* SpotlightSIMBL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SpotlightSIMBL.xcodeproj; path = SpotlightSIMBL/SpotlightSIMBL.xcodeproj; sourceTree = "<group>"; };
 		5F11C2FD1A2B0834005A1731 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5F2B37721A3E42E500AC2C19 /* SearchPluginEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPluginEditorWindowController.h; sourceTree = "<group>"; };
 		5F2B37731A3E42E500AC2C19 /* SearchPluginEditorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPluginEditorWindowController.m; sourceTree = "<group>"; };
@@ -289,7 +307,6 @@
 		F301218945FC13823731C49D /* libPods-Flashlight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Flashlight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB24C0261E5B0A39009C523B /* alarm.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = alarm.bundle; sourceTree = "<group>"; };
 		FB8706281AB8B45D8405C11C /* Pods-Flashlight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashlight.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flashlight/Pods-Flashlight.release.xcconfig"; sourceTree = "<group>"; };
-		FB8B898D1D0E57A300E68B38 /* SpotlightSIMBL.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SpotlightSIMBL.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +326,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5CD4D1F0205A37F100E7CA41 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CD4D1F4205A37F100E7CA41 /* SpotlightSIMBL.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5F6326B61A082FA900CE241E /* ITSwitch */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,7 +486,7 @@
 		6C564475159E7C0800215467 = {
 			isa = PBXGroup;
 			children = (
-				FB8B898D1D0E57A300E68B38 /* SpotlightSIMBL.bundle */,
+				5CD4D1EF205A37F100E7CA41 /* SpotlightSIMBL.xcodeproj */,
 				6C6AF45E1842DE3700E2ACBB /* README.md */,
 				6C56448A159E7C0800215467 /* FlashlightApp */,
 				6C564483159E7C0800215467 /* Frameworks */,
@@ -575,6 +600,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5CD4D1FC205A389300E7CA41 /* PBXTargetDependency */,
 			);
 			name = Flashlight;
 			productName = EasySIMBL;
@@ -590,7 +616,6 @@
 				LastUpgradeCheck = 0820;
 				TargetAttributes = {
 					6C56447F159E7C0800215467 = {
-						DevelopmentTeam = EX596BNL45;
 						DevelopmentTeamName = "wolfgang baird";
 						ProvisioningStyle = Manual;
 					};
@@ -617,12 +642,28 @@
 			mainGroup = 6C564475159E7C0800215467;
 			productRefGroup = 6C564481159E7C0800215467 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5CD4D1F0205A37F100E7CA41 /* Products */;
+					ProjectRef = 5CD4D1EF205A37F100E7CA41 /* SpotlightSIMBL.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6C56447F159E7C0800215467 /* Flashlight */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5CD4D1F4205A37F100E7CA41 /* SpotlightSIMBL.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SpotlightSIMBL.bundle;
+			remoteRef = 5CD4D1F3205A37F100E7CA41 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6C56447E159E7C0800215467 /* Resources */ = {
@@ -742,6 +783,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5CD4D1FC205A389300E7CA41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SpotlightSIMBL;
+			targetProxy = 5CD4D1FB205A389300E7CA41 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5FC0166E1A1DBE7300F8E4E7 /* Localizable.strings */ = {
@@ -871,10 +920,11 @@
 			baseConfigurationReference = 1A17445B392804CE3CB1AE6B /* Pods-Flashlight.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = EX596BNL45;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EasySIMBL",
@@ -900,9 +950,10 @@
 			baseConfigurationReference = FB8706281AB8B45D8405C11C /* Pods-Flashlight.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = EX596BNL45;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EasySIMBL",

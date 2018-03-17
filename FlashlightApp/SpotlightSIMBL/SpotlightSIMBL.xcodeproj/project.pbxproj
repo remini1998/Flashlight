@@ -56,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5CD4D342205A660E00E7CA41 /* SPKQuery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPKQuery.h; sourceTree = "<group>"; };
 		5F5B17411A05757500809207 /* SpotlightSIMBL.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotlightSIMBL.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5B17451A05757500809207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F5B174B1A05758800809207 /* _Flashlight_Bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Flashlight_Bootstrap.h; sourceTree = "<group>"; };
@@ -513,6 +514,7 @@
 				5F5B180C1A057AB100809207 /* SPWebResult.h */,
 				5F5B180D1A057AB100809207 /* SPWebSliceController.h */,
 				5F5B180E1A057AB100809207 /* SPWebViewController.h */,
+				5CD4D342205A660E00E7CA41 /* SPKQuery.h */,
 			);
 			path = SpotlightHeaders;
 			sourceTree = "<group>";
@@ -559,6 +561,7 @@
 				TargetAttributes = {
 					5F5B17401A05757400809207 = {
 						CreatedOnToolsVersion = 6.1;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -722,8 +725,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = NO;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Flashlight-ecbbmgoifutwxzgzjgruzjyizltl/Build/Products/Debug",
@@ -736,6 +742,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nateparrott.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SYMROOT = "$(PROJECT_DIR)/build";
 				WRAPPER_EXTENSION = bundle;
@@ -746,8 +753,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = YES;
+				DEVELOPMENT_TEAM = "";
 				DSTROOT = /;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -761,7 +771,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nateparrott.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = NO;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
 				SYMROOT = "$(PROJECT_DIR)/build";
 				WRAPPER_EXTENSION = bundle;
 			};

@@ -14,6 +14,7 @@
 #import "SPGroupHeadingResult.h"
 #import "SPSearchPanel.h"
 #import "SPAppDelegate.h"
+#import "SPMainViewController.h"
 #import <FlashlightKit/FlashlightKit.h>
 
 @interface _FlashlightPluginEngine ()
@@ -77,9 +78,13 @@
 
 - (void)reloadResultsViews {
     id appDelegate = [[NSApplication sharedApplication] delegate];
-    SPResultViewController *resultVC = [appDelegate performSelector:NSSelectorFromString(@"currentViewController")];
+    SPResultViewController *resultVC = [appDelegate currentViewController];
     [resultVC setResults:resultVC.results];
-    [resultVC reloadResultsSelectingTopResult:YES animate:NO];
+    if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_12) {
+        [resultVC reloadResultsSelectingTopResult:YES animate:NO];
+    } else {
+        [[appDelegate mainViewController] reloadResultsSelectingTopResult:YES animate:NO];
+    }
     [self updateWindowCollapsed];
 }
 
