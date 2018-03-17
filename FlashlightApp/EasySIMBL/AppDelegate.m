@@ -132,15 +132,15 @@
         result = !result;
         SIMBLLogNotice(@"SMLoginItemSetEnabled() failed!");
     }
-    self.SIMBLOn = result;
      */
+    self.SIMBLOn = result;
     
-    if (!result) {
+//    if (!result) {
         // restart spotlight after 1 sec to remove injected code:
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [NSTask launchedTaskWithLaunchPath:@"/usr/bin/killall" arguments:@[@"Spotlight"]];
         });
-    }
+//    }
     
     if (result) {
         // show available plugins on enable
@@ -197,21 +197,22 @@
     NSString *dstBndl = @"/Library/Application Support/SIMBL/Plugins/SpotlightSIMBL.bundle/Contents/Info.plist";
     if ([[NSFileManager defaultManager] fileExistsAtPath:dstBndl]){
         NSString *srcVer = [[[NSMutableDictionary alloc] initWithContentsOfFile:srcBndl] objectForKey:@"CFBundleVersion"];
-#ifdef DEBUG
+//#ifdef DEBUG
         // Mock bundle version of currently loaded SpotlightSIMBL.bundle
         // so it will get overwritten every time in DEBUG mode.
-        NSString *dstVer = @"-1";
-#else
+//        NSString *dstVer = @"-1";
+//#else
         NSString *dstVer = [[[NSMutableDictionary alloc] initWithContentsOfFile:dstBndl] objectForKey:@"CFBundleVersion"];
-#endif
-        if (![srcVer isEqual:dstVer] && ![srcPath isEqualToString:@""])
-        {
-            NSLog(@"\nSource: %@\nDestination: %@", srcVer, dstVer);
+//#endif
+        NSLog(@"\nSource plugin version: %@\nInstalled plugin version: %@", srcVer, dstVer);
+        if (![srcVer isEqual:dstVer] && ![srcPath isEqualToString:@""]) {
+            NSLog(@"\nUpdating plugin...");
             [[NSFileManager defaultManager] removeItemAtPath:@"/tmp/SpotlightSIMBL.bundle" error:&error];
             [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:@"/tmp/SpotlightSIMBL.bundle" error:&error];
             [[NSFileManager defaultManager] replaceItemAtURL:[NSURL fileURLWithPath:dstPath] withItemAtURL:[NSURL fileURLWithPath:@"/tmp/SpotlightSIMBL.bundle"] backupItemName:nil options:NSFileManagerItemReplacementUsingNewMetadataOnly resultingItemURL:nil error:&error];
             system("killall Spotlight; sleep 1; osascript -e 'tell application \"Spotlight\" to inject SIMBL into Snow Leopard'");
         }
+        
     } else {
         [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:dstPath error:&error];
         system("killall Spotlight; sleep 1; osascript -e 'tell application \"Spotlight\" to inject SIMBL into Snow Leopard'");
@@ -229,6 +230,7 @@
 - (IBAction)requestAPlugin:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlight.nateparrott.com/ideas"]];
 }
+
 #pragma mark Links
 - (IBAction)showPythonAPI:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/nate-parrott/Flashlight/wiki/Creating-a-Plugin"]];
@@ -280,6 +282,7 @@
         }
     }
 }
+
 #pragma mark Preferences
 - (void)setupDefaults {
     NSDictionary *defaults = @{
@@ -300,7 +303,6 @@
 }
 
 #pragma mark Uninstallation
-
 - (IBAction)uninstall:(id)sender {
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setMessageText:@"Uninstall Flashlight?"];
