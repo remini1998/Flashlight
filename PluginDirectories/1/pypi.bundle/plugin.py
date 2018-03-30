@@ -42,5 +42,5 @@ def results(parsed, original_query):
     }
 
 def run(url):
-    import os
+    import os, pipes
     os.system('open "{0}"'.format(url))

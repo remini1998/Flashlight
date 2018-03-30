@@ -1,11 +1,23 @@
 import urllib, json
 
 def results(parsed, original_query):
+    with open('preferences.json') as f:
+        settings = json.load(f)
+    server = settings.get('server', None)
+
+    # Set server URL
+    if server == 'local':
+        url_template = 'x-man-page://'
+    elif server == 'online':
+        url_template = 'https://man.cx/'
+    else:
+        url_template = 'https://man.cx/'
     search_specs = [
-         ["man", "~manquery", "x-man-page://"]
+         ["man", "~manquery", url_template]
     ]
     for name, key, url in search_specs:
         if key in parsed:
+            
             search_url = url + urllib.quote_plus(parsed[key])
             return {
                 "title": "Search {0} for '{1}'".format(name, parsed[key]),

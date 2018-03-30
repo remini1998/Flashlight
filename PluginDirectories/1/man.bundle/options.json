@@ -1,0 +1,13 @@
+{
+    "options": [
+        {
+            "text": "Server:",
+            "type": "dropdown",
+            "key": "server",
+            "options": [
+                {"text": "x-man-page:// (Local)", "value": "local"},
+                {"text": "https://man.cx (Online)", "value": "online"}
+            ]
+        }
+    ]
+}
