@@ -1,0 +1,12 @@
+{
+  "devices" : [
+    {
+      "alias" : "keyboard",
+      "fullname" : "Magic Keyboard"
+    },
+    {
+      "alias" : "mouse",
+      "fullname" : "Magic Mouse"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+    "options": [
+	    {
+		    "type": "table",
+		    "text": "Alias:",
+		    "key": "devices",
+		    "columns": [
+		        {"text": "Alias", "key": "alias"},
+		        {"text": "Device name", "key": "fullname"}
+		    ]
+		}
+	]
+}

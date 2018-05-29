@@ -1,0 +1,10 @@
+{
+    "name": "connect",
+    "displayName": "Connect",
+    "description": "Connect/Disconnect bluetooth device",
+    "examples": ["connect Magic Keyboard", "cn keyboard", "disconnect Magic Mouse", "dis mouse", "tg airpods", "bt airpods"],
+    "categories": ["Utilities"],
+    "openPreferencesOnInstall": true,
+    "creator_name": "EARTHPYY",
+    "creator_url": "https://www.earthpyy.com"
+}
