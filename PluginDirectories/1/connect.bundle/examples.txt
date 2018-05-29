@@ -1,0 +1,7 @@
+connect(connect) ~device(bluetooth device)
+connect(cn) ~device(bluetooth device)
+disconnect(disconnect) ~device(bluetooth device)
+disconnect(dis) ~device(bluetooth device)
+toggle(toggle) ~device(bluetooth device)
+toggle(tg) ~device(bluetooth device)
+toggle(bt) ~device(bluetooth device)
