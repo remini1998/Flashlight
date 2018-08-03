@@ -2,8 +2,9 @@ def results(parsed, original_query):
 	import json
 	settings = json.load(open("preferences.json"))
   	username = settings.get('username')
-  	password = settings.get('password')
-  	if username is None or username == '' or password is None or password == '':
+    password = settings.get('password')
+    host = settings.get('host')
+  	if username is None or username == '' or password is None or password == '' or host is None or host == '':
 		return {
   			"title": "Add task '{0}' to TickTick".format(parsed['~title'].encode('utf-8')),
   			"run_args": ['NO_CREDENTIALS', ''],
@@ -19,10 +20,11 @@ def results(parsed, original_query):
 def run(title):
     import json
     import httplib, urllib2
-    conn = httplib.HTTPSConnection("ticktick.com")
     settings = json.load(open("preferences.json"))
     username = settings.get('username')
     password = settings.get('password')
+    host = settings.get('host')
+    conn = httplib.HTTPSConnection(host)
     authinfo = {"username": username, "password": password}
     headers = {"Content-type" : "application/json"}
     conn.request("POST", "/api/v2/user/signon", json.dumps(authinfo), headers)
