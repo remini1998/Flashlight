@@ -1,6 +1,15 @@
 {
     "options": [
         {
+            "text": "Source:",
+            "type": "dropdown",
+            "key": "host",
+            "options": [
+                {"text": "ticktick", "value": "ticktick.com"},
+                {"text": "dida365 - chinese version", "value": "dida365.com"}
+            ]
+        },
+        {
             "text": "Username:",
             "key": "username",
             "type": "text"
